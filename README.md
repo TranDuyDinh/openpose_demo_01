@@ -1,32 +1,9 @@
-# openpose_demo_01
+Cos Phương pháp phổ biến để làm mờ (blurring) ảnh là dùng low-pass filter. Có nhiều phương pháp để làm mờ ảnh, như: Gaussian filter, Salt or pepper filter, speckle filter [1]
 
-//*****************************************************************************
-//! \brief  This funtions multiplies 2 matrices
-//! \param  n row of first matrix
-//! \param  w col. of 1st matrix & row of 2rd matrix
-//! \param  m col. of second matrix
-//! \param  mat1[] first matrix
-//! \param  mat2[] second matrix
-//! \return res[] result
-//*****************************************************************************
-void mult2Matrix(float res[sizeMax],
-				 int n, int w, int m,
-				 int mat1[sizeMax], int mat2[sizeMax])
-{
-	int pos; // position of the current value
-	int j;
-	int row, col;
-	int dim = n*m;	// dimemtion of output matrix
-	
-	for (pos = 0; pos < dim; pos++)
-	{
-		res[pos] = 0;		// reset value
-		row = pos / m;		// row of pos
-		col = pos % m;		// collow of pos
 
-		for (j = 0; j < w; j++)
-		{
-			res[pos] = res[pos] + (mat1[row * w + j] * mat2[col + (j * m)]);
-		}
-	}
-}
+
+[1] Rohina Ansari,Himanshu Yadav,Anurag Jain,” A Survey on Blurred Images with Restoration and Transformation Techniques”, International Journal of Computer Applications (0975 - 8887) Volume 68- No.22, April 2013.
+[2] Fagun Vankawala, et all ,“ A Survey on different Image Deblurring Techniques”, International Journal of Computer Applications (0975 - 8887) Volume 116- No.13, April 2015.
+[3] A.Mahalakshmi, B.Shanthini, “A Survey on Image Deblurring”, International Conference on Computer Communication and Informatics (ICCCI – 2016), Jan. 07- 09, 2016, Coimbatore, India.
+
+
